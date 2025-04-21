@@ -1,0 +1,141 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+small {
+    display: none;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%); */
+    background: #1a1021;
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite
+}
+
+/* @keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    background: rgba(255, 255, 255, 0.137);
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    border-radius: 15px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.container .form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 12px 0;
+}
+
+.form .form-group {
+    margin-bottom: 15px;
+    width: calc(100%/2 - 20px);
+}
+
+form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-group input, select{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, select:focus, .form-group input:valid, select:valid{
+    border-color: skyblue;
+}
+
+form .buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+form .buttons button {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form .buttons .btn-submit{
+    background-color: #4CAF50;
+}
+
+form .buttons .btn-reset{
+    background-color: #f44336;
+}
+
+form .buttons .btn-save{
+    background-color: #2196F3;
+}
+
+form .buttons .btn-submit:hover {
+    background-color: #45a049;
+}
+
+form .buttons .btn-reset:hover {
+    background-color: #da190b;
+}
+
+form .buttons .btn-save:hover {
+    background-color: #1976D2;
+}
+
+@media(max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    form .form-group {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .container form {
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+
+    .container form::-webkit-scrollbar {
+        width: 0;
+    }
+}

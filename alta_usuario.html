@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Alta De Perfil</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Alta de Perfil</div>
+        <form id="formulario" novalidate class="form">
+            <div class="form-group">
+            <label for="nombre">Nombre(s):</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa nombre" required>
+            <small>Por favor ingrese nombre</small>
+        </div>
+        
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Ingresa apellidos" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nCelular">Celular:</label>
+                <input type="tel" id="nCelular" name="nCelular" placeholder="Ingresa tu numero de celular" required>
+                <small>Por favor ingrese apellidos</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="correo">Correo electronico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingresa correo electronico" required>
+                <small>Por favor ingrese un correo electronico</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="direccion">Direccion:</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Ingresa direccion" required>
+                <small>Por favor ingrese su direccion</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" placeholder="Ingresa edad" required  min="1" max="150">
+                <small>Por favor ingrese o seleccione su edad</small>
+            </div>
+            
+            <div class="form-group">
+                <label class="gender-select-label" for="gender">Género:</label>
+                <select 
+                name="gender" 
+                id="gender"
+                class="gender-select"
+                required
+                >
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                    <option value="other">No binario</option>
+                    <option value="not-say">Prefiero no decir</option>
+                </select>
+                <small>Por favor seleccione su genero</small>
+            </div>
+
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ingresa usuario" required>
+                <small>Por favor ingrese un usuario</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa contraseña" required>
+                <small>Por favor ingrese una contraseña</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="confContrasena">Confirmar Contraseña:</label>
+                <input type="password" id="confContrasena" name="confContrasena" placeholder="Confirmar contraseña" required>
+                <small>Por favor confirme su contraseña</small>
+            </div>
+            
+            <div class="buttons">
+                <button type="submit" class="btn-submit" onclick="enviarFormulario(event)">Enviar</button>
+                <button type="reset" class="btn-reset" onclick="borrarTodo()">Borrar todo</button>
+                <button type="button" class="btn-save" onclick="guardarSinEnviar()">Guardar sin enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+            
+            const camposRequeridos = document.querySelectorAll('[required]');
+            let formularioValido = true;
+        
+            for (const campo of camposRequeridos) {
+                if (campo.value.trim() === '') {
+                    formularioValido = false;
+                    alert(`El campo ${campo.labels[0].textContent} es obligatorio`);
+                    
+                    break;
+                }
+            }
+        
+            if (formularioValido) {
+                alert('Formulario enviado correctamente');
+                document.getElementById('formulario').reset();
+        
+                window.location.href = 'pagina_inicio.html';
+            }
+        }
+        
+        function borrarTodo() {
+            document.getElementById('formulario').reset();
+        }
+        
+        function guardarSinEnviar() {
+            const formData = new FormData(document.getElementById('formulario'));
+            alert('Formulario guardado sin enviar');
+            window.location.href = 'pagina_inicio.html';
+        }
+        
+        document.getElementById('confContrasena').addEventListener('blur', function() {
+            const contrasena = document.getElementById('contrasena').value;
+            const confContrasena = document.getElementById('confContrasena').value;
+            
+            if (contrasena !== confContrasena) {
+                alert('Las contraseñas no coinciden');
+            }
+        });
+    </script>
+</body>
+</html>

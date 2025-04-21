@@ -1,0 +1,196 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    scroll-behavior: smooth;
+    /* outline: solid 1px red; */
+}
+
+body {
+    background: #28252e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 2vh;
+    right: 2vw;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    color: white;
+    transition: right 0.3s ease-in-out;
+    padding-top: 60px;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.menu a:hover {
+    background: #444;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .menu {
+    right: -100px;
+}
+
+.title {
+    background: #52128a;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+#byte {
+    text-align: center;
+}
+
+.footer {
+    position: relative;
+    background: #131313;
+    bottom: 0px;
+    padding: 3rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+#articulos {
+    position: relative;
+    color: white;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 100px;
+    /* margin-bottom: 100px; */
+}
+
+#articulos .wrapper {
+    border-radius: 15px;
+    width: 80vw;
+    height: 75vh;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+    margin: 5rem auto;
+    overflow: hidden;
+}
+
+#articulos .wrapper-holder {
+    display: grid;
+    grid-template-columns: repeat(6, 100%);
+    height: 100%;
+    width: 100%;
+    /* animation: slider 30s ease-in-out infinite alternate; */
+}
+
+#articulos #slider-img-1 {
+    background-image: url(Images/historia.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#articulos #slider-img-2 {
+    background-image: url(Images/problemas-software.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#articulos #slider-img-3 {
+    background-image: url(Images/control-calidad.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#articulos #slider-img-4 {
+    background-image: url(Images/comercializacion.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#articulos #slider-img-5 {
+    background-image: url(Images/lenguajes.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#articulos #slider-img-6 {
+    background-image: url(Images/modelos-desarrollo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#articulos .button-holder .button {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    display: inline-block;
+    margin: .3rem;
+}
+
+#articulos .button-holder {
+    position: absolute;
+    left: 37vw;
+    bottom: 11vh;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 7px 4px rgba(0, 200, 255, 0.6);
+}
+
+/* @keyframes slider {
+    0%{transform: translateX(0%);}
+    10%{transform: translateX(-100%);}
+    20%{transform: translateX(-100%);}
+    30%{transform: translateX(-200%);}
+    40%{transform: translateX(-200%);}
+    50%{transform: translateX(-200%);}
+    60%{transform: translateX(-300%);}
+    70%{transform: translateX(-300%);}
+    80%{transform: translateX(-300%);}
+    90%{transform: translateX(0%);}
+    100%{transform: translateX(0%);}
+} */
+
+#acerca-de a, .equipo a {
+    text-decoration: none;
+}
+
+#acerca-de a:hover, #acerca-de i:hover, .equipo a:hover {
+    color: #4f92f7;
+}
+
+.equipo {
+    text-align: center;
+    justify-content: center;
+    padding: 7vw;
+}
