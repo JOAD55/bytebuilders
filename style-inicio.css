@@ -175,7 +175,7 @@ li:hover:nth-child(5) {
     }
 
     .title {
-        top: .5vh;
+        top: -25px;
     }
 
     ul {
