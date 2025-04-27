@@ -194,3 +194,31 @@ input[type="checkbox"]:checked ~ .menu {
     justify-content: center;
     padding: 7vw;
 }
+
+.articulo {
+    text-align: justify;
+    justify-items: center;
+    font-size: 2rem;
+    margin: 0 10vw;
+}
+
+.articulo .img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.articulo .img img {
+    width: 60vw;
+}
+
+@media(max-width: 920px) {
+    .articulo {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    .articulo .img img {
+        width: 75vw;
+    }
+}
