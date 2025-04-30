@@ -1,0 +1,124 @@
+/* Estilos mejorados para móviles */
+        .autor-container {
+            margin: 15px 0;
+            position: relative;
+            width: 100%;
+        }
+        
+        .autor-name {
+            color: inherit;
+            cursor: pointer;
+            padding: 5px 0;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .autor-name:hover {
+            text-decoration: underline;
+        }
+        
+        .autor-dropdown {
+            display: none;
+            position: relative;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        
+        .autor-container.active .autor-dropdown {
+            display: block;
+        }
+        
+        .autor-imagen {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .autor-imagen:hover {
+            transform: scale(1.05);
+        }
+        
+        .autor-info {
+            padding: 10px;
+            font-size: 14px;
+            color: black;
+        }
+        
+        .email-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #0066cc;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+        
+        .email-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        @keyframes zoom {
+            from {transform: scale(0.1)}
+            to {transform: scale(1)}
+        }
+        
+        .modal-content {
+            animation-name: zoom;
+            animation-duration: 0.3s;
+        }
+        
+        @media (min-width: 768px) {
+            /* Comportamiento desktop */
+            .autor-dropdown {
+                position: absolute;
+                left: 0;
+                top: 100%;
+                min-width: 200px;
+            }
+            
+            .autor-container:hover .autor-dropdown {
+                display: block;
+            }
+        }
