@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style-pPrincipal.css">
-    <title>Articulo 1</title>
+    <link rel="stylesheet" href="style-nosotros.css">
+    <title>Nosotros</title>
 </head>
 <body>
     <header class="title">
@@ -19,7 +20,7 @@
         <label for="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></label>
 
         <div class="menu">
-            <a href="pagina_inicio.html">        <i class="fa-solid fa-house"></i><p>Inicio</p></a>
+            <a href="pagina_inicio.html"><i class="fa-solid fa-house"></i><p>Inicio</p></a>
             <a href="alta_usuario.html">Alta de perfil</a>
             <a href="#">Ver perfil</a>
             <a href="#">Editar perfil</a>
@@ -27,21 +28,86 @@
             <a href="#acerca-de">Acerca de:</a>
         </div>
     </header>
-    <section class="equipo" id="articulos">
+    
+    <section class="equipo articulo" id="articulos">
         <h1 class="equipo">
             <p><a href="https://universidadcudec.com/">CUDEC UNIVERSIDAD</a></p><br>
 
-        <p><br>Autores: <br> <a href="mailto:joshuas.salinas@gmail.com">Sosa Salinas Joshua Adam (PROGRAMADOR)</a></p><br>
+        <p><br>Autores: <br> 
+        
+        <!-- Joshua Adam -->
+        <div class="autor-container" onclick="toggleAutor(this)">
+            <span class="autor-name">Sosa Salinas Joshua Adam (PROGRAMADOR)</span>
+            <div class="autor-dropdown">
+                <img src="Images/cv-jass.png" alt="Joshua Adam" class="autor-imagen" onclick="openModal(event, this)">
+                <div class="autor-info">
+                    <strong>Programador</strong><br>
+                    Especialista en desarrollo web y aplicaciones.
+                    <a href="mailto:joshuas.salinas@gmail.com" class="email-link">Enviar email</a>
+                </div>
+            </div>
+        </div><br>
 
-        <p><a href="mailto:ocdpapn@gmail.com">Cid del Prado Arrazola Oscar (CONSULTOR)</a></p><br>
+        <!-- Oscar -->
+        <div class="autor-container" onclick="toggleAutor(this)">
+            <span class="autor-name">Cid del Prado Arrazola Oscar (CONSULTOR)</span>
+            <div class="autor-dropdown">
+                <img src="https://via.placeholder.com/300?text=Oscar" alt="Oscar" class="autor-imagen" onclick="openModal(event, this)">
+                <div class="autor-info">
+                    <strong>Consultor</strong><br>
+                    Experto en análisis de sistemas y consultoría tecnológica.
+                    <a href="mailto:ocdpapn@gmail.com" class="email-link">Enviar email</a>
+                </div>
+            </div>
+        </div><br>
 
-        <p><a href="mailto:oswaldo402010@gmail.com">Cruz Villalobos Aaron Oswaldo (COMUNITY MANAGER)</a></p><br>
+        <!-- Aaron Oswaldo -->
+        <div class="autor-container" onclick="toggleAutor(this)">
+            <span class="autor-name">Cruz Villalobos Aaron Oswaldo (COMUNITY MANAGER)</span>
+            <div class="autor-dropdown">
+                <img src="https://via.placeholder.com/300?text=Aaron+Oswaldo" alt="Aaron Oswaldo" class="autor-imagen" onclick="openModal(event, this)">
+                <div class="autor-info">
+                    <strong>Community Manager</strong><br>
+                    Gestiona nuestras redes sociales y comunicación digital.
+                    <a href="mailto:oswaldo402010@gmail.com" class="email-link">Enviar email</a>
+                </div>
+            </div>
+        </div><br>
 
-        <p><a href="mailto:israelsanchez25127@gmail.com">Sanchez Resendiz Israel (ANALISTA DE SISTEMAS)</a></p><br>
+        <!-- Israel -->
+        <div class="autor-container" onclick="toggleAutor(this)">
+            <span class="autor-name">Sanchez Resendiz Israel (ANALISTA DE SISTEMAS)</span>
+            <div class="autor-dropdown">
+                <img src="https://via.placeholder.com/300?text=Israel" alt="Israel" class="autor-imagen" onclick="openModal(event, this)">
+                <div class="autor-info">
+                    <strong>Analista de Sistemas</strong><br>
+                    Especializado en análisis y diseño de sistemas complejos.
+                    <a href="mailto:israelsanchez25127@gmail.com" class="email-link">Enviar email</a>
+                </div>
+            </div>
+        </div><br>
 
-        <p><a href="mailto:alexa_saima@hotmail.com">Santoyo Reynoso Alexa Saima (CEO)</a></p><br>
+        <!-- Alexa Saima -->
+        <div class="autor-container" onclick="toggleAutor(this)">
+            <span class="autor-name">Santoyo Reynoso Alexa Saima (CEO)</span>
+            <div class="autor-dropdown">
+                <img src="Images/cv-assr.jpg" alt="Alexa Saima" class="autor-imagen" onclick="openModal(event, this)">
+                <div class="autor-info">
+                    <strong>CEO</strong><br>
+                    Directora ejecutiva y líder estratégica de ByteBuilders.
+                    <a href="mailto:alexa_saima@hotmail.com" class="email-link">Enviar email</a>
+                </div>
+            </div>
+        </div><br>
         </h1>
     </section>
+    
+    <!-- Modal para imagen ampliada -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    </div>
+    
     <footer class="footer">
         <div id="acerca-de">
             <h3>Acerca de:</h3>
@@ -49,14 +115,56 @@
             <br><h4>Datos de contacto:</h4>
             <div class="contacto">
                 <a href="#"><i class="fa-solid fa-envelope"></i> bytebuilders@gmail.com</a><br>
-
                 <a href="#"><i class="fa-solid fa-phone"></i> +52 56 1382 9283</a><br>
-
                 <a href="#"><i class="fa-brands fa-tiktok"></i> @ByteBuildersTech</a><br>
                 <a href="#"><i class="fa-brands fa-instagram"></i> @ByteBuildersOfficial</a><br>
                 <a href="#"><i class="fa-brands fa-x-twitter"></i> @ByteBuildersCompany</a><br>
             </div>
         </div>
     </footer>
+    
+    <script>
+        function toggleAutor(element) {
+            // Solo aplicar en móviles
+            if (window.innerWidth < 768) {
+                document.querySelectorAll('.autor-container').forEach(container => {
+                    if (container !== element) {
+                        container.classList.remove('active');
+                    }
+                });
+                
+                element.classList.toggle('active');
+                event.stopPropagation();
+            }
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.autor-container')) {
+                document.querySelectorAll('.autor-container').forEach(container => {
+                    container.classList.remove('active');
+                });
+            }
+        });
+        
+        function openModal(event, img) {
+            event.stopPropagation();
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("expandedImg");
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+        
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
